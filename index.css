@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Source+Serif+4:wght@400;600&family=Source+Serif+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Source+Serif+4:wght@400;600&family=Source+Serif+Pro&display=swap');
+
+:root {
+  --primary-background: linear-gradient(
+    180deg,
+    rgb(35, 132, 128),
+    rgb(67, 22, 122)
+  );
+  --text-font: 'Libre Baskerville', serif;
+  --btn-color: rgb(210, 195, 59);
+}
+body {
+  margin: 0;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  margin: 0;
+  background: var(--primary-background);
+  display: inline-block;
+}
+.header-section {
+  min-height: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-section .heading {
+  font-size: 35px;
+  font-family: var(--text-font);
+  text-transform: uppercase;
+  margin-top: 5px;
+  color: burlywood;
+  font-weight: 700;
+}
+.btn-start {
+  background: var(--btn-color);
+  font-size: 30px;
+  padding: 5px 25px 5px 25px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: var(--text-font);
+  cursor: pointer;
+  border: 3px solid var(--btn-color);
+  transition: ease-in-out 150ms;
+}
+.btn-start:hover {
+  background: transparent;
+  color: var(--btn-color);
+}
+.game-body {
+  border: 5px solid black;
+  width: 65vw;
+  height: 70vh;
+  display: block;
+  background: whitesmoke;
+  margin-top: 10px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+.game-body .mouse {
+  width: 66px;
+  height: 66px;
+  position: absolute;
+  transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 1;
+  cursor: pointer;
+}
+/* mouse movement css */
+
+/* modal css */
+
+.modal {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -50%;
+  height: 20rem;
+  width: 33rem;
+  background: rgb(249, 245, 245);
+  border-radius: 5px;
+  text-align: center;
+  transition: all 150ms;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  font-family: var(--text-font);
+}
+.open-modal {
+  position: absolute;
+  top: 20%;
+  animation: modal-down 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.modal h1 {
+  font-size: 75px;
+}
+.modal i {
+  font-size: 35px;
+  float: right;
+  padding: 6px;
+}
+
+@keyframes modal-down {
+  0% {
+    top: -20%;
+  }
+  100% {
+    top: 20%;
+  }
+}
+
+.timer {
+  position: absolute;
+  display: block;
+  left: 73%;
+  top: 0;
+  font-family: var(--text-font);
+}
+.timer h2 {
+  text-transform: uppercase;
+}
+.timer span {
+  font-size: 25px;
+}
+
+.difficulty-level {
+  position: absolute;
+  display: block;
+  left: 10%;
+  top: 0;
+  font-family: var(--text-font);
+}
+.difficulty-level button {
+  font-size: 20px;
+  border-radius: 2px;
+  border: 2px solid rgb(171, 171, 171);
+  padding: 5px;
+  cursor: pointer;
+}
+
+.difficulty-level button:focus {
+  background: rgb(255, 32, 32);
+
+  border: none;
+}
+.difficulty-level p {
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+}
+/* close button */
+.close-window {
+  position: absolute;
+  top: 0%;
+  right: 2%;
+}
+.close-window i {
+  font-size: 60px;
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 150ms;
+}
+.close-window i:hover {
+  transform: scale(1.2);
+}
+
+@media only screen and (max-width: 600px) {
+  .difficulty-level {
+    display: flex;
+    flex-direction: column;
+    top: 4%;
+    left: 4%;
+  }
+  .difficulty-level button {
+    font-size: 10px;
+    width: 60%;
+  }
+  .difficulty-level p {
+    font-size: 12px;
+  }
+  .header-section .heading {
+    font-size: 20px;
+  }
+  .header-section {
+    min-height: 11rem;
+  }
+  .btn-start {
+    font-size: 15px;
+  }
+  .timer {
+    font-size: 10px;
+    top: 5%;
+    left: 62%;
+  }
+  .timer span {
+    font-size: 18px;
+  }
+  .close-window i {
+    font-size: 20px;
+  }
+  .game-body {
+    width: 88vw;
+    margin-top: 17px;
+    height: 65vh;
+  }
+  .game-body .mouse {
+    width: 45px;
+    height: 45px;
+  }
+  .modal {
+    width: 80%;
+    height: auto;
+  }
+  .modal i {
+    font-size: 30px;
+  }
+  .modal h1 {
+    font-size: 30px;
+  }
+
+  .modal p {
+    font-size: 18px;
+  }
+}
